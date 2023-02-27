@@ -1,3 +1,5 @@
+/* -------  General Styles ------- */
+
 body {
   font-family: "Lato", sans-serif;
 }
@@ -29,12 +31,15 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
+
+/* ---  Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 .item {
@@ -50,14 +55,23 @@ main img {
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 10px 0px 10px;
   text-align: center;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 54px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  display: flex;
 }
 
 header nav ul li {
@@ -75,9 +89,14 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
+/* -------  Search Form ------- */
+
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 form label {
@@ -87,19 +106,24 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 154px;
 }
 
 form button {
   background-color: #ff385c;
   border: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 18px;
   padding: 15px;
   width: 100%;
 }
 
-/* footer */
+form > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* -------  Footer ------- */
 
 footer {
   background-color: #ff385c;
@@ -111,19 +135,27 @@ footer p {
   padding: 20px;
 }
 
-/*mob*/
+/* -------  Media Query ------- */
 
 @media all and (min-width: 480px) {
   .logo {
+    /* adjust font-size for mobile*/
     font-size: 24px;
   }
 
   header {
+    /* Changes `block` to `flex`. */
     display: flex;
+
+    /*align  center*/
     align-items: center;
-    padding: 0 0 0 14px;
+
+    padding: 0 0 0 15px;
+    /*Pushes logo*/
     justify-content: space-between;
   }
+
+  /*----form adjustments---*/
 
   form {
     flex-direction: row;
@@ -133,9 +165,11 @@ footer p {
 
   form > div,
   form > button {
+    /*fit width of 5 items to page*/
     width: 20%;
   }
   form > div {
+    /*stack label and form*/
     display: flex;
     flex-direction: column;
   }
@@ -148,7 +182,7 @@ footer p {
 
   form button,
   form label {
-    font-size: 11px;
+    font-size: 12px;
   }
 
   .group {
@@ -162,6 +196,7 @@ footer p {
   }
 
   #ideas .group {
+    /*2x2 orientation*/
     flex-direction: column;
   }
 
@@ -169,13 +204,15 @@ footer p {
     object-fit: contain;
   }
 
-  #BecomeAHost {
+  /*---#host id adjustments---*/
+
+  #host {
     display: flex;
     align-items: center;
     gap: 11px;
   }
 
-  .host {
+  .hosting {
     flex: 1;
   }
 }
